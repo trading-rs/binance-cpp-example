@@ -1,0 +1,3 @@
+[submodule "binance-cpp"]
+	path = binance-cpp
+	url = https://github.com/zjhmale/binance-cpp.git
