@@ -22,3 +22,11 @@ export BINANCE_API_SECRET="<secret_key>"
 ./build.sh # to build the example project
 ./build/main # run the example executable
 ```
+
+### Run with Docker
+
+* Create `.env` file with Binance apikey and secretkey from `.env-example` file
+
+```bash
+docker-compose up
+```

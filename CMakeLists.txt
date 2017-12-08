@@ -23,6 +23,7 @@ include_directories(
   ${SPDLOG_INCLUDE_DIR}
   ${BINANCE_INCLUDE_DIR}
   ${FP_INCLUDE_DIR}
+  ${DERIVEJSON_INCLUDE_DIR}
   )
 
 SET(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "")
@@ -38,6 +39,9 @@ link_directories(
   ${Boost_LIBRARY_DIR}
   ${OPENSSL_LIBRARIES})
 
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++14")
 add_executable(main main.cc)
 target_link_libraries(
@@ -47,4 +51,5 @@ target_link_libraries(
   ${Boost_LIBRARIES}
   ${CPR_LIBRARIES}
   "-ldl"
+  Threads::Threads
   )
